@@ -1,3 +1,7 @@
+### Counter Dev Branch:
+Trying to add a token estimation counter based on https://github.com/latitudegames/GPT-3-Encoder.
+Stuck on Error: TypeError: fs.readFileSync is not a function
+
 ## Prompts AI
 
 [Prompts AI](https://prompts.ai/) is an advanced [GPT-3](https://en.wikipedia.org/wiki/GPT-3) playground.
