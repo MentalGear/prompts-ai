@@ -32,6 +32,10 @@ import {makeStyles} from "@material-ui/styles";
 import ModeTabs from "./ModeTabs";
 import WorkspaceForm from "./WorkspaceForm";
 
+import {encode, decode} from "gpt-3-encoder"
+// console.log(encode);
+
+
 const useStyles = makeStyles({
     fullWidth: {
         width: '100%',
@@ -58,6 +62,19 @@ export function PromptEditor() {
 
     const handlePromptChange = (event: React.FormEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         dispatch(editPrompt(event.currentTarget.value));
+
+        // test
+        const encoded = encode(event.currentTarget.value)
+        console.log('Encoded this string looks like: ', encoded)
+        //
+        // console.log('We can look at each token and what it represents')
+        // for(let token of encoded){
+        //   console.log({token, string: decode([token])})
+        // }
+        //
+        // const decoded = decode(encoded)
+        // console.log('We can decode it back into:\n', decoded)
+
     }
     const handleTemperatureChange = (event: React.ChangeEvent<{}>, value: number | number[]) => {
         dispatch(editTemperature(value as number));
@@ -309,7 +326,7 @@ export function PromptEditor() {
                         onChange={handlePromptChange}
                         value={prompt}
                         variant="outlined"
-                        helperText={`${prompt.length}/ Limit`}
+                        helperText={`Token/Char Size: ${prompt.length}`}
                     />
                     <br/>
                     <br/>
