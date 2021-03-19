@@ -1,6 +1,7 @@
 ### Counter Dev Branch:
 Trying to add a token estimation counter based on https://github.com/latitudegames/GPT-3-Encoder.
-Stuck on Error: TypeError: fs.readFileSync is not a function
+
+Stuck on Error: "TypeError: fs.readFileSync is not a function".
 
 ## Prompts AI
 
