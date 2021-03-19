@@ -301,7 +301,7 @@ export function PromptEditor() {
                 <Grid item xs={12} sm={9} md={9}>
                     <TextField
                         id="prompt-text"
-                        label="A prompt"
+                        label="Prompt"
                         multiline
                         rows={9}
                         rowsMax={100}
@@ -309,6 +309,7 @@ export function PromptEditor() {
                         onChange={handlePromptChange}
                         value={prompt}
                         variant="outlined"
+                        helperText={`${prompt.length}/ Limit`}
                     />
                     <br/>
                     <br/>
